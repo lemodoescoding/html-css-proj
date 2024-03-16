@@ -6,6 +6,7 @@
 /* 1rem default is 16px */
 
 :root {
+  --background: #333;
   --white: #fff;
   --black: #111;
   --f-n-size: 1rem;
@@ -25,10 +26,10 @@
 
 body {
   min-height: 300vh;
-  background: linear-gradient(120deg, #006270,#588157)
+  background: var(--background);
 }
 
-.nav {
+nav {
   width: 100%;
   height: 80px;
   padding: .75rem 1rem;
@@ -43,34 +44,34 @@ body {
   z-index: 1000;
 }
 
-.nav .brandLogo {
+nav .brandLogo {
   color: var(--white);
   font-size: var(--f-b-size);
   font-weight: var(--bold);
   margin: 0 1rem;
 }
 
-.nav .links ul {
+nav .links ul {
   list-style: none;
 }
 
-.nav .links ul li {
+nav .links ul li {
   display: inline-block;
   padding: 0 2rem;
 }
 
-.nav .links ul li a {
+nav .links ul li a {
   text-decoration: none;
   color: var(--white);
   font-size: var(--f-n-size);
 }
 
-.nav .searchBox {
+nav .searchBox {
   position: relative;
   margin: 0;
 }
 
-.nav .searchBox input {
+nav .searchBox input {
   border: none;
   outline: none;
   width: 200px;
@@ -84,14 +85,30 @@ body {
   transition: .3s;
 }
 
-.nav .searchBox input:focus {
+nav .searchBox input:focus {
   border-bottom: 1px solid var(--white);
 }
 
-.nav .searchBox .searchButton {
+nav .searchBox .searchButton {
   color: var(--white);
   position: absolute;
   top: 50%;
   right: 5px;
   transform: translateY(-50%);
+}
+
+@media (max-width: 981px){
+  nav .links #toggleNav {
+    display: none;
+  }
+
+  nav .links .hamburgerNav {
+    display: none;
+  }
+}
+
+@media (max-width: 425px){
+  nav .links ul {
+    display: none;
+  }
 }
