@@ -1,0 +1,97 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+}
+
+/* 1rem default is 16px */
+
+:root {
+  --white: #fff;
+  --black: #111;
+  --f-n-size: 1rem;
+  --f-m-size: 1.5rem;
+  --f-b-size: 2.5rem;
+  --light: 200;
+  --normal: 400;
+  --bold: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+body {
+  min-height: 300vh;
+  background: linear-gradient(120deg, #006270,#588157)
+}
+
+.nav {
+  width: 100%;
+  height: 80px;
+  padding: .75rem 1rem;
+  background: hsla(0, 100%, 0%, .4);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav .brandLogo {
+  color: var(--white);
+  font-size: var(--f-b-size);
+  font-weight: var(--bold);
+  margin: 0 1rem;
+}
+
+.nav .links ul {
+  list-style: none;
+}
+
+.nav .links ul li {
+  display: inline-block;
+  padding: 0 2rem;
+}
+
+.nav .links ul li a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: var(--f-n-size);
+}
+
+.nav .searchBox {
+  position: relative;
+  margin: 0;
+}
+
+.nav .searchBox input {
+  border: none;
+  outline: none;
+  width: 200px;
+  height: 30px;
+  padding: 0 25px 0 0;
+  background-color: transparent;
+  border-bottom: 1px solid hsla(0, 100%, 100%, .4);
+  color: var(--white);
+  font-size: var(--f-n-size);
+  font-weight: 300;
+  transition: .3s;
+}
+
+.nav .searchBox input:focus {
+  border-bottom: 1px solid var(--white);
+}
+
+.nav .searchBox .searchButton {
+  color: var(--white);
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+}
